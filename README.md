@@ -42,6 +42,22 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Boxy (ex-Storelift) is a company surfaced as a portfolio company of serena and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Boxy, operated by the French company SAS Storelift (founded 2018 in Ivry-sur-Seine by David Gabai and Tom Hayat), built unstaffed 24/7 convenience stores inside 15–20 m² shipping containers. Computer vision, weight-sensing shelves and an on-site compute node let a shopper unlock the door with a QR code from the Boxy app, take products off the shelf and walk out to be invoiced automatically. The company raised ~€5M in 2020 and a €25M Series A in February 2022 led by Serena, with CapHorn and LocalGlobe, targeting 1,000 stores.
 
-Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — https://www.getboxy.co/
+## Status: defunct — no API surface
+
+Boxy closed its entire store estate by the end of April 2024. SAS Storelift (SIREN 838729192) entered **liquidation judiciaire on 6 November 2024**, after *sauvegarde* (June 2024) and *redressement* (September 2024) procedures; the store containers were auctioned in early 2025.
+
+The company never published a developer program, API documentation, or a machine-readable contract, and there is nothing left to probe:
+
+| Probe | Result |
+|---|---|
+| `getboxy.co` nameservers | `ns1/ns2.parkingcrew.net` — parked |
+| `https://www.getboxy.co/` | TLS handshake failure |
+| `http://www.getboxy.co/` (and every path probed) | `410 Gone` (ParkingCrew error page `PC410NAML1`) |
+| `storelift.com` (predecessor brand) | domain-for-sale lander; soft-200 catch-all on every path |
+| First-party GitHub org / npm / PyPI packages | none found |
+
+Recorded absences live in [`well-known/getboxy-well-known.yml`](well-known/getboxy-well-known.yml) (15 paths across 3 hosts, zero real documents) and [`security/getboxy-domain-security.yml`](security/getboxy-domain-security.yml). No `WellKnown`, `AgentCard`, `OpenAPI`, or other presence pointer is wired into `apis.yml`, because none of those surfaces exist.
+
+Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — https://www.getboxy.co/ (now parked)

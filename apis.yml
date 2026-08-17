@@ -1,19 +1,32 @@
 aid: getboxy
 name: Boxy (ex-Storelift)
-description: 'Boxy (ex-Storelift) is a company surfaced as a portfolio company of serena and added to
-  the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Boxy, operated by the French company SAS Storelift (founded 2018 in Ivry-sur-Seine by David
+  Gabai and Tom Hayat), built unstaffed 24/7 convenience stores inside 15-20 square metre shipping containers,
+  using computer vision, weight-sensing shelves and an on-site compute node so a shopper could unlock the
+  door with a QR code from the Boxy mobile app, take products off the shelf and walk out to be invoiced
+  automatically. The company raised roughly 5M EUR in 2020 and a 25M EUR Series A in February 2022 led
+  by Serena with CapHorn and LocalGlobe, targeting 1,000 stores. It shut its entire store estate by the
+  end of April 2024, and SAS Storelift entered liquidation judiciaire on 6 November 2024 after sauvegarde
+  and redressement procedures earlier that year; the store containers were auctioned in early 2025. The
+  getboxy.co domain is now parked and returns HTTP 410 Gone on every path, and no developer program, API
+  documentation or machine-readable contract was ever published. This profile records that absence.'
 url: https://raw.githubusercontent.com/api-evangelist/getboxy/refs/heads/main/apis.yml
 x-type: company
 x-source: serena-portfolio
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: defunct-no-api-surface
 specificationVersion: '0.20'
 created: '2026-08-17'
 modified: '2026-08-17'
 tags:
 - Company
 - Consumer
+- Retail
+- Convenience Stores
+- Autonomous Stores
+- Computer Vision
+- France
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +34,33 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/getboxy-domain-security.yml
 - type: Website
   url: https://www.getboxy.co/
+x-enrichment:
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: SAS Storelift, the company behind the Boxy autonomous-store brand, entered
+    liquidation judiciaire on 2024-11-06 and its getboxy.co domain is now parked on
+    ParkingCrew nameservers answering HTTP 410 Gone on every path, so there is no
+    surface left to profile and none was ever published.
+  evidence:
+  - url: http://www.getboxy.co/
+    status: 410
+  - url: http://www.getboxy.co/openapi.json
+    status: 410
+  - url: http://www.getboxy.co/llms.txt
+    status: 410
+  - url: http://www.getboxy.co/.well-known/agent-card.json
+    status: 410
+  - url: https://storelift.com/.well-known/agent-card.json
+    status: 200
+  - url: https://www.pappers.fr/entreprise/storelift-838729192
+    status: 200
+  checked: '2026-08-17'

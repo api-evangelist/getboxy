@@ -1,0 +1,70 @@
+generated: '2026-08-17'
+method: probed
+source: live probes of every host named in apis.yml, 2026-08-17
+note: >-
+  Recorded absence, not a served surface. No /.well-known/ pointer is wired into
+  apis.yml because nothing returned a real document. getboxy.co no longer resolves
+  to the company: its nameservers are ns1/ns2.parkingcrew.net and every path over
+  HTTP answers 410 Gone with a ParkingCrew error page (ID PC410NAML1), while HTTPS
+  fails the TLS handshake outright. The predecessor brand domain storelift.com is a
+  domain-for-sale lander that answers 200 with a 114-byte JavaScript redirect to
+  /lander for EVERY path — a soft-200 catch-all, so its 200s are recorded here as
+  misses, including the 65-byte text/plain "llms.txt" that is actually robots.txt
+  boilerplate emitted by the parking platform. SAS STORELIFT, the operating company
+  behind the Boxy brand, has been in liquidation judiciaire since 2024-11-06.
+hosts:
+- host: www.getboxy.co
+  scheme_note: HTTPS handshake fails (SSL_ERROR_SYSCALL); probed over HTTP
+  documents:
+  - path: /.well-known/security.txt
+    status: 410
+  - path: /.well-known/openid-configuration
+    status: 410
+  - path: /.well-known/oauth-authorization-server
+    status: 410
+  - path: /.well-known/api-catalog
+    status: 410
+  - path: /.well-known/ai-plugin.json
+    status: 410
+  - path: /.well-known/agent-card.json
+    status: 410
+  - path: /.well-known/agent.json
+    status: 410
+- host: storelift.com
+  scheme_note: >-
+    HTTPS reachable but the host is a domain-for-sale lander; every path returns the
+    same 114-byte HTML redirect shell, so each 200 below is a soft-200 catch-all and
+    is treated as a miss.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    result: miss-soft-200-html
+  - path: /.well-known/openid-configuration
+    status: 200
+    result: miss-soft-200-html
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    result: miss-soft-200-html
+  - path: /.well-known/api-catalog
+    status: 200
+    result: miss-soft-200-html
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    result: miss-soft-200-html
+  - path: /.well-known/agent-card.json
+    status: 200
+    result: miss-soft-200-html
+  - path: /.well-known/agent.json
+    status: 200
+    result: miss-soft-200-html
+- host: api.getboxy.co
+  scheme_note: resolves to the same parked A record; HTTPS handshake fails
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+    result: tls-handshake-failure
+summary:
+  hosts_probed: 3
+  paths_probed: 15
+  real_documents_found: 0
+  pointer_emitted: false
