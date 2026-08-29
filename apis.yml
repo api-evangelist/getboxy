@@ -15,6 +15,17 @@ x-type: company
 x-source: serena-portfolio
 x-tier: stub
 x-tier-reason: defunct-no-api-surface
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.23'
 created: '2026-08-17'
 modified: '2026-08-17'
