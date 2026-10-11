@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "getboxy",
+    "captured_at": "2026-10-11T190236",
+    "source_url": "https://www.getboxy.co/",
+    "source_type": "Website",
+    "file": "getboxy-2026-10-11T190236.png",
+    "bytes": 105371,
+    "capture": "playwright-local"
+  }
+]
