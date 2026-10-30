@@ -64,22 +64,44 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Boxy, operated by the French company SAS Storelift (founded 2018 in Ivry-sur-Seine by David Gabai and Tom Hayat), built unstaffed 24/7 convenience stores inside 15–20 m² shipping containers. Computer vision, weight-sensing shelves and an on-site compute node let a shopper unlock the door with a QR code from the Boxy app, take products off the shelf and walk out to be invoiced automatically. The company raised ~€5M in 2020 and a €25M Series A in February 2022 led by Serena, with CapHorn and LocalGlobe, targeting 1,000 stores.
+Boxy, operated by the French company SAS Storelift (founded 2018 in Ivry-sur-Seine by David Gabai and Tom Hayat), built unstaffed 24/7 convenience stores inside 15-20 square metre shipping containers, using computer vision, weight-sensing shelves and an on-site compute node so a shopper could unlock the door with a QR code from the Boxy mobile app, take products off the shelf and walk out to be invoiced automatically. The company raised roughly 5M EUR in 2020 and a 25M EUR Series A in February 2022 led by Serena with CapHorn and LocalGlobe, targeting 1,000 stores. It shut its entire store estate by the end of April 2024, and SAS Storelift entered liquidation judiciaire on 6 November 2024 after sauvegarde and redressement procedures earlier that year; the store containers were auctioned in early 2025. The getboxy.co domain is now parked and returns HTTP 410 Gone on every path, and no developer program, API documentation or machine-readable contract was ever published. This profile records that absence.
 
-## Status: defunct — no API surface
+**Areas:** Company · Consumer · Retail · Convenience Stores · Autonomous Stores · Computer Vision · France · Defunct
 
-Boxy closed its entire store estate by the end of April 2024. SAS Storelift (SIREN 838729192) entered **liquidation judiciaire on 6 November 2024**, after *sauvegarde* (June 2024) and *redressement* (September 2024) procedures; the store containers were auctioned in early 2025.
+## Boxy (ex-Storelift) on APIs.io
 
-The company never published a developer program, API documentation, or a machine-readable contract, and there is nothing left to probe:
+Everything profiled for Boxy (ex-Storelift) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/getboxy/](https://apis.io/providers/getboxy/)** — or go straight to one of the APIs or properties below.
 
-| Probe | Result |
-|---|---|
-| `getboxy.co` nameservers | `ns1/ns2.parkingcrew.net` — parked |
-| `https://www.getboxy.co/` | TLS handshake failure |
-| `http://www.getboxy.co/` (and every path probed) | `410 Gone` (ParkingCrew error page `PC410NAML1`) |
-| `storelift.com` (predecessor brand) | domain-for-sale lander; soft-200 catch-all on every path |
-| First-party GitHub org / npm / PyPI packages | none found |
+### Published properties
 
-Recorded absences live in [`well-known/getboxy-well-known.yml`](well-known/getboxy-well-known.yml) (15 paths across 3 hosts, zero real documents) and [`security/getboxy-domain-security.yml`](security/getboxy-domain-security.yml). No `WellKnown`, `AgentCard`, `OpenAPI`, or other presence pointer is wired into `apis.yml`, because none of those surfaces exist.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — https://www.getboxy.co/ (now parked)
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Getboxy Domain Security](https://apis.io/security/getboxy/getboxy-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.getboxy.co/)
+
+## API Evangelist rating
+
+**Unrated** — none of the rubric's checks were satisfied by anything we could find.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Boxy (ex-Storelift): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/getboxy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
